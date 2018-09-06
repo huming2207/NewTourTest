@@ -3,6 +3,7 @@ package com.jacksonhu.newtourtest.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.Select;
 
 public class PaymentPage
 {
@@ -27,4 +28,39 @@ public class PaymentPage
 
     @FindBy(how = How.NAME, using = "buyFlights")
     private WebElement purchaseButton;
+
+    public void inputPassengerFirstName(String name)
+    {
+        passengerFirstNameTextBox.sendKeys(name);
+    }
+
+    public void inputPassengerLastName(String name)
+    {
+        passengerLastNameTextBox.sendKeys(name);
+    }
+
+    public void selectMealType(String mealTypeName)
+    {
+        new Select(passengerMealSelection).selectByVisibleText(mealTypeName);
+    }
+
+    public void inputCreditCardNumber(String creditCardNum)
+    {
+        creditCardNumberTextBox.sendKeys();
+    }
+
+    public void inputCardHolderFirstName(String name)
+    {
+        cardHolderFirstNameTextBox.sendKeys(name);
+    }
+
+    public void inputCardHolderLastName(String name)
+    {
+        cardHolderLastNameTextBox.sendKeys(name);
+    }
+
+    public void clickPurchaseButton()
+    {
+        purchaseButton.click();
+    }
 }

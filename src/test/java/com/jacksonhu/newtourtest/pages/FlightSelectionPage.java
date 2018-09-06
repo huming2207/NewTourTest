@@ -12,4 +12,8 @@ public class FlightSelectionPage
     @FindBy(how = How.NAME, using = "reserveFlights")
     private WebElement reserveFlightButton;
 
+    public void clickReserveFlightButton()
+    {
+        reserveFlightButton.click();
+    }
 }

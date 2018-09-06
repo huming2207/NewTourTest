@@ -19,5 +19,13 @@ public class ConfirmationPage
     @FindBy(how = How.NAME, using = "//a[@href=\"mercurysignoff.php\"]")
     private WebElement signOffButton;
 
+    public List<WebElement> getConfirmationTableContents()
+    {
+        return this.confirmationTableContents;
+    }
 
+    public void clickSignOffButton()
+    {
+        signOffButton.click();
+    }
 }
