@@ -11,4 +11,7 @@ public class TicketPage
 
     @FindBy(how = How.NAME, using = "toPort")
     private WebElement toSelection;
+
+    @FindBy(how = How.NAME, using = "findFlights")
+    private WebElement continueButton;
 }
