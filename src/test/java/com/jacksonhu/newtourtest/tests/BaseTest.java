@@ -1,4 +1,4 @@
-package com.jacksonhu.newtourtest.cases;
+package com.jacksonhu.newtourtest.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.slf4j.Logger;

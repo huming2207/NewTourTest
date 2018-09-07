@@ -1,4 +1,4 @@
-package com.jacksonhu.newtourtest.cases;
+package com.jacksonhu.newtourtest.tests;
 
 import com.jacksonhu.newtourtest.ConstantValues;
 import com.jacksonhu.newtourtest.SeleniumService;

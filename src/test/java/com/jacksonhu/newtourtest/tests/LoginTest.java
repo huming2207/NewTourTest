@@ -1,4 +1,4 @@
-package com.jacksonhu.newtourtest.cases;
+package com.jacksonhu.newtourtest.tests;
 
 import com.jacksonhu.newtourtest.ConstantValues;
 import com.jacksonhu.newtourtest.SeleniumService;
@@ -24,7 +24,13 @@ public class LoginTest extends BaseTest
         webDriver.get("http://newtours.demoaut.com/mercurywelcome.php");
 
         // Go to the sign-on page and register an account
-        webDriver.findElement(By.partialLinkText("REGISTER")).click();
+        try {
+            webDriver.findElement(By.partialLinkText("SIGN-IN")).click();
+        } catch (NoSuchElementException exception) {
+            logger.warn("Sign-in button does not exist, have you already signed in?");
+        }
+
+
         SignOnPage page = PageFactory.initElements(this.webDriver, SignOnPage.class);
 
         // Login

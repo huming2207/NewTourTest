@@ -1,4 +1,4 @@
-package com.jacksonhu.newtourtest.cases;
+package com.jacksonhu.newtourtest.tests;
 
 import com.jacksonhu.newtourtest.SeleniumService;
 import com.jacksonhu.newtourtest.pages.ConfirmationPage;
@@ -29,7 +29,7 @@ public class BookingConfirmationTest extends BaseTest
         }
 
         for(WebElement element : confirmationPage.getConfirmationTableContents()) {
-            logger.info(element.getText());
+            logger.info(element.getAttribute("innerText"));
         }
     }
 }

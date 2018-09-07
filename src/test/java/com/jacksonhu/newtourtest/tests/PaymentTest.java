@@ -1,7 +1,8 @@
-package com.jacksonhu.newtourtest.cases;
+package com.jacksonhu.newtourtest.tests;
 
 import com.jacksonhu.newtourtest.SeleniumService;
 import com.jacksonhu.newtourtest.pages.PaymentPage;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.PageFactory;
 
 public class PaymentTest extends BaseTest
@@ -17,7 +18,16 @@ public class PaymentTest extends BaseTest
      */
     public void testPayment()
     {
-        PaymentPage paymentPage = PageFactory.initElements(webDriver, PaymentPage.class);
+        PaymentPage paymentPage;
+
+        try {
+            paymentPage = PageFactory.initElements(webDriver, PaymentPage.class);
+        } catch (NoSuchElementException exception) {
+            logger.warn("Failed to load the payment page.");
+            return;
+        }
+
+        logger.info("Payment page loaded.");
 
         // Submit a fake passenger info
         paymentPage.inputCardHolderFirstName("John");
