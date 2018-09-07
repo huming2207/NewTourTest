@@ -1,5 +1,6 @@
 package com.jacksonhu.newtourtest.cases;
 
+import com.jacksonhu.newtourtest.pages.FlightSelectionPage;
 import com.jacksonhu.newtourtest.pages.TicketPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,5 +26,9 @@ public class BookingTest extends BaseTest
 
         // Submit the request
         ticketPage.clickContinueButton();
+
+        // Continue for reserve flights
+        FlightSelectionPage flightSelectionPage = PageFactory.initElements(webDriver, FlightSelectionPage.class);
+        flightSelectionPage.clickReserveFlightButton(); // Just reserve a default flight
     }
 }
