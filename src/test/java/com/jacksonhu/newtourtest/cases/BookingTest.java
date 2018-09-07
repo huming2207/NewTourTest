@@ -10,13 +10,15 @@ public class BookingTest extends BaseTest
 {
     public BookingTest(WebDriver webDriver)
     {
-        super(webDriver, "BookingTest");
+        super(webDriver, "#5, BookingTest");
     }
 
+    /**
+     * Step #5, Book a ticket for a round trip from London to Sydney
+     */
     public void bookTicket()
     {
         // Go to the flight booking page
-        webDriver.get("http://newtours.demoaut.com/mercurywelcome.php");
         webDriver.findElement(By.partialLinkText("Flights")).click();
 
         // Fill in the form

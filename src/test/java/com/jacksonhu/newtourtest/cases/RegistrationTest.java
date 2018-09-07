@@ -3,8 +3,6 @@ package com.jacksonhu.newtourtest.cases;
 import com.jacksonhu.newtourtest.ConstantValues;
 import com.jacksonhu.newtourtest.pages.RegSuccessfulPage;
 import com.jacksonhu.newtourtest.pages.RegistrationPage;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,18 +14,14 @@ public class RegistrationTest extends BaseTest
 
     public RegistrationTest(WebDriver webDriver)
     {
-        super(webDriver, "RegistrationTest");
+        super(webDriver, "#3, RegistrationTest");
     }
 
+    /**
+     * Step #3, Registration
+     */
     public void performValidRegistration()
     {
-        webDriver.get("http://newtours.demoaut.com/mercurywelcome.php");
-
-        // Go to the register page and register an account
-        webDriver.findElement(By.partialLinkText("REGISTER")).click();
-        RegistrationPage page = PageFactory.initElements(this.webDriver, RegistrationPage.class);
-
-
         // Fill in the contents
         page.inputCity("Melbourne");
         page.inputEmail("test@rmit.edu.au");
@@ -40,6 +34,10 @@ public class RegistrationTest extends BaseTest
         page.inputState("Victoria");
         page.selectCountryByName("AUSTRALIA");
         page.inputPhoneNumber("+61411451400");
+
+        // Print the username and password
+        logger.info("User name: {}", ConstantValues.NEWTOUR_USERNAME);
+        logger.info("Password: {}", ConstantValues.NEWTOUR_PASSWORD);
 
         // Submit the page
         page.clickRegisterButton();

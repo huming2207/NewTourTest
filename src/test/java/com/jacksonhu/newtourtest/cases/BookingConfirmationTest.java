@@ -6,13 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+
 public class BookingConfirmationTest extends BaseTest
 {
     public BookingConfirmationTest(WebDriver webDriver)
     {
-        super(webDriver, "BookingConfirmationTest");
+        super(webDriver, "#7, BookingConfirmationTest");
     }
 
+    /**
+     * Step #7, Print ticket information into the console
+     */
     public void listBookingConfirmation()
     {
         ConfirmationPage confirmationPage = null;

@@ -2,18 +2,19 @@ package com.jacksonhu.newtourtest.cases;
 
 import com.jacksonhu.newtourtest.ConstantValues;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class IndexPageTest extends BaseTest
 {
     public IndexPageTest(WebDriver webDriver)
     {
-        super(webDriver, "IndexPageTest");
+        super(webDriver, "#1, IndexPageTest");
         webDriver.get("http://newtours.demoaut.com/mercurywelcome.php");
     }
 
+    /**
+     * Step #1, Validate Index page
+     */
     public void validateImgCount()
     {
         if(webDriver.findElements(By.xpath("//img")).size() < ConstantValues.INDEX_PAGE_IMG_COUNT) {

@@ -8,10 +8,11 @@ public class PaymentTest extends BaseTest
 {
     public PaymentTest(WebDriver webDriver)
     {
-        super(webDriver, "PaymentTest");
+        super(webDriver, "#6, PaymentTest");
     }
 
     /**
+     * Step #6, pay for the ticket (you can put any number for the credit card as it is a demo)
      * This test should follow after the BookingTest::bookTicket
      */
     public void testPayment()

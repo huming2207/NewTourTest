@@ -9,9 +9,12 @@ public class LogoffTest extends BaseTest
 {
     public LogoffTest(WebDriver webDriver)
     {
-        super(webDriver, "LogoffTest");
+        super(webDriver, "#8, LogoffTest");
     }
 
+    /**
+     * Step #8, log out
+     */
     public void logOff()
     {
         WebElement logOffElement;
