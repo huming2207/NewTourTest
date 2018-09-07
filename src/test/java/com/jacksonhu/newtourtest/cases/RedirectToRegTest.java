@@ -1,13 +1,13 @@
 package com.jacksonhu.newtourtest.cases;
 
+import com.jacksonhu.newtourtest.SeleniumService;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class RedirectToRegTest extends BaseTest
 {
-    public RedirectToRegTest(WebDriver webDriver)
+    public RedirectToRegTest()
     {
-        super(webDriver, "#2, RedirectToRegTest");
+        super(SeleniumService.getWebDriver(), "#2, RedirectToRegTest");
     }
 
     /**

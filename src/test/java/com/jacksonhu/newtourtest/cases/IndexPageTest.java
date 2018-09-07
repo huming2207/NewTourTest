@@ -1,14 +1,14 @@
 package com.jacksonhu.newtourtest.cases;
 
 import com.jacksonhu.newtourtest.ConstantValues;
+import com.jacksonhu.newtourtest.SeleniumService;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 public class IndexPageTest extends BaseTest
 {
-    public IndexPageTest(WebDriver webDriver)
+    public IndexPageTest()
     {
-        super(webDriver, "#1, IndexPageTest");
+        super(SeleniumService.getWebDriver(), "#1, IndexPageTest");
         webDriver.get("http://newtours.demoaut.com/mercurywelcome.php");
     }
 

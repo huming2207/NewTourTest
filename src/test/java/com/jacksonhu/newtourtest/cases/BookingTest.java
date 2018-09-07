@@ -1,16 +1,16 @@
 package com.jacksonhu.newtourtest.cases;
 
+import com.jacksonhu.newtourtest.SeleniumService;
 import com.jacksonhu.newtourtest.pages.FlightSelectionPage;
 import com.jacksonhu.newtourtest.pages.TicketPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class BookingTest extends BaseTest
 {
-    public BookingTest(WebDriver webDriver)
+    public BookingTest()
     {
-        super(webDriver, "#5, BookingTest");
+        super(SeleniumService.getWebDriver(), "#5, BookingTest");
     }
 
     /**

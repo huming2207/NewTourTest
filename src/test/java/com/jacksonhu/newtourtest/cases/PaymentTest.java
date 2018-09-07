@@ -1,14 +1,14 @@
 package com.jacksonhu.newtourtest.cases;
 
+import com.jacksonhu.newtourtest.SeleniumService;
 import com.jacksonhu.newtourtest.pages.PaymentPage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class PaymentTest extends BaseTest
 {
-    public PaymentTest(WebDriver webDriver)
+    public PaymentTest()
     {
-        super(webDriver, "#6, PaymentTest");
+        super(SeleniumService.getWebDriver(), "#6, PaymentTest");
     }
 
     /**

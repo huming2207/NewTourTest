@@ -1,20 +1,19 @@
 package com.jacksonhu.newtourtest.cases;
 
 import com.jacksonhu.newtourtest.ConstantValues;
+import com.jacksonhu.newtourtest.SeleniumService;
 import com.jacksonhu.newtourtest.pages.RegSuccessfulPage;
 import com.jacksonhu.newtourtest.pages.RegistrationPage;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class RegistrationTest extends BaseTest
 {
-    private RegistrationPage page;
 
-    public RegistrationTest(WebDriver webDriver)
+    public RegistrationTest()
     {
-        super(webDriver, "#3, RegistrationTest");
+        super(SeleniumService.getWebDriver(), "#3, RegistrationTest");
     }
 
     /**
@@ -22,6 +21,8 @@ public class RegistrationTest extends BaseTest
      */
     public void performValidRegistration()
     {
+        RegistrationPage page = PageFactory.initElements(webDriver, RegistrationPage.class);
+
         // Fill in the contents
         page.inputCity("Melbourne");
         page.inputEmail("test@rmit.edu.au");

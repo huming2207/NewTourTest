@@ -1,17 +1,17 @@
 package com.jacksonhu.newtourtest.cases;
 
+import com.jacksonhu.newtourtest.SeleniumService;
 import com.jacksonhu.newtourtest.pages.ConfirmationPage;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 
 public class BookingConfirmationTest extends BaseTest
 {
-    public BookingConfirmationTest(WebDriver webDriver)
+    public BookingConfirmationTest()
     {
-        super(webDriver, "#7, BookingConfirmationTest");
+        super(SeleniumService.getWebDriver(), "#7, BookingConfirmationTest");
     }
 
     /**

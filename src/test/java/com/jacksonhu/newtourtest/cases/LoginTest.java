@@ -1,18 +1,18 @@
 package com.jacksonhu.newtourtest.cases;
 
 import com.jacksonhu.newtourtest.ConstantValues;
+import com.jacksonhu.newtourtest.SeleniumService;
 import com.jacksonhu.newtourtest.pages.SignOnPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginTest extends BaseTest
 {
-    public LoginTest(WebDriver webDriver)
+    public LoginTest()
     {
-        super(webDriver, "#4, LoginTest");
+        super(SeleniumService.getWebDriver(), "#4, LoginTest");
     }
 
     /**

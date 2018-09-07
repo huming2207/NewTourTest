@@ -1,15 +1,15 @@
 package com.jacksonhu.newtourtest.cases;
 
+import com.jacksonhu.newtourtest.SeleniumService;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LogoffTest extends BaseTest
 {
-    public LogoffTest(WebDriver webDriver)
+    public LogoffTest()
     {
-        super(webDriver, "#8, LogoffTest");
+        super(SeleniumService.getWebDriver(), "#8, LogoffTest");
     }
 
     /**
