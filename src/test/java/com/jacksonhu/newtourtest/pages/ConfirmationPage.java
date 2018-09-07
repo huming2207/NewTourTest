@@ -13,19 +13,11 @@ public class ConfirmationPage
      *  In the table, all the text are wrapped with a <font> tag with size attribute set to "-1".
      *  Btw, <table> tag sucks.
      */
-    @FindBy(how = How.NAME, using = "//font[@size=\"-1\"]")
+    @FindBy(how = How.XPATH, using = "//font[@size=\"-1\"]")
     private List<WebElement> confirmationTableContents;
-
-    @FindBy(how = How.NAME, using = "//a[@href=\"mercurysignoff.php\"]")
-    private WebElement signOffButton;
 
     public List<WebElement> getConfirmationTableContents()
     {
         return this.confirmationTableContents;
-    }
-
-    public void clickSignOffButton()
-    {
-        signOffButton.click();
     }
 }
