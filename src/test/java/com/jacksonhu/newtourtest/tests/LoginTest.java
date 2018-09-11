@@ -23,9 +23,18 @@ public class LoginTest extends BaseTest
         logger.info("Testing login...");
         webDriver.get("http://newtours.demoaut.com/mercurywelcome.php");
 
+        // Firstly, log off the current session
+        try {
+            WebElement signOffButton = webDriver.findElement(By.partialLinkText("SIGN-OFF"));
+            signOffButton.click();
+            logger.info("Logged off from previous session successfully.");
+        } catch (NoSuchElementException exception) {
+            logger.warn("Sign-off button not found, continue to log in directly");
+        }
+
         // Go to the sign-on page and register an account
         try {
-            webDriver.findElement(By.partialLinkText("SIGN-IN")).click();
+            webDriver.findElement(By.partialLinkText("SIGN-ON")).click();
         } catch (NoSuchElementException exception) {
             logger.warn("Sign-in button does not exist, have you already signed in?");
         }
@@ -40,9 +49,10 @@ public class LoginTest extends BaseTest
 
         // Try get the result
         try {
-            WebElement signOffButton = webDriver.findElement(By.partialLinkText("SIGN-OFF"));
+            webDriver.findElement(By.partialLinkText("SIGN-OFF"));
         } catch (NoSuchElementException exception) {
             logger.warn("Sign-off button not found, login test didn't pass.");
+            return;
         }
         logger.info("Login test passed.");
     }
