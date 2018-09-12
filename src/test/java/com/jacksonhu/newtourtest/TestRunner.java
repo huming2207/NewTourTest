@@ -53,12 +53,16 @@ public class TestRunner
     private void runStep3()
     {
         RegistrationTest registrationTest = new RegistrationTest();
+        registrationTest.performInvalidRegistrationWithInvalidInfo();
+        registrationTest.performInvalidRegistrationWithNothing();
         registrationTest.performValidRegistration();
     }
 
     private void runStep4()
     {
         LoginTest loginTest = new LoginTest();
+        loginTest.performInvalidEmptyLogin();
+        loginTest.performInvalidLoginWithRandomStr();
         loginTest.performLogin();
     }
 
